@@ -24,5 +24,3 @@ The sturcture of a BN is stored in an object of dictionary. The key of the dicti
         - pc_stable.py: implementation of the PC-Stable algorithm
         - red.py: implementation of the RED algorithm
 - RED_demo.py: a demo sript
-
-# Redundant-Edge-Detection
