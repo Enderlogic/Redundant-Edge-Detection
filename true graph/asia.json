@@ -1,0 +1,1 @@
+{"asia":{"par":[],"nei":[]},"tub":{"par":["asia"],"nei":[]},"smoke":{"par":[],"nei":[]},"lung":{"par":["smoke"],"nei":[]},"bronc":{"par":["smoke"],"nei":[]},"either":{"par":["lung","tub"],"nei":[]},"xray":{"par":["either"],"nei":[]},"dysp":{"par":["bronc","either"],"nei":[]}}
