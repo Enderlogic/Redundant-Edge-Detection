@@ -14,11 +14,11 @@ The sturcture of a BN is stored in an object of dictionary. The key of the dicti
 - folders
     - true graph: the ground truth graph
     - learned graph: the graphs learned by structure learning algorithms
-    - corrected graph: the graphs corrected by RED
+    - modified graph: the graphs modified by RED
     - result: the evaluation results of learned graph and corrected graph
     - lib: a folder with necessary scripts including:
         - accessory.py: some auxiliary functions used in other scripts
-        - evaluation.py: the F1 evaluation
+        - evaluation.py: script for evaluation scores (the F1 and SHD score)
         - score.py: some score computing functions used in other scripts
         - hc.py: implementation of the hill-climbing algorithm
         - pc_stable.py: implementation of the PC-Stable algorithm
