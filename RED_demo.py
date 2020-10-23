@@ -4,7 +4,7 @@ from lib.accessory import data_preprocessing, cpdag
 import json
 from lib.pc_stable import pc_stable
 from lib.hc import hc
-from lib.red import red
+from lib.sed import sed
 from pathlib import Path
 import os
 import csv
@@ -14,13 +14,12 @@ datasize_repository = [100, 500, 1000, 5000, 10000, 50000, 100000]
 noise_repository = ['E0', 'E5', 'E10']
 algorithm_repository = ['hc', 'pc.stable', 'h2pc', 'mmhc', 'gobnilp']
 
-dataset_list = ['asia', 'alarm', 'child', 'insurance', 'mildew', 'water', 'hailfinder']
+dataset_list = ['alarm']
 datasize_list = [100, 500, 1000, 5000, 10000, 50000, 100000]
 noise_list = ['E0', 'E5', 'E10']
 algorithm_list = ['hc', 'h2pc', 'pc.stable', 'gobnilp']
 
 result_columns = ['dataset', 'datasize', 'noise', 'algorithm', 'f1', 'shd']
-result_complete = pd.read_csv('result/result_complete.csv')
 result = []
 for dataset in dataset_list:
     # load true graph
@@ -47,7 +46,7 @@ for dataset in dataset_list:
                         result.append({'dataset': dataset, 'datasize': datasize, 'noise': noise_in_file, 'algorithm': alg, 'f1': compare(true_cpdag, cpdag(learned_dag))['f1'], 'shd': shd(true_cpdag, cpdag(learned_dag))})
                         print(result[-1])
                         # run RED algorithm
-                        modified_cpdag = red(learned_dag, data, counts, arities, varnames, score_function = 'bic')
+                        modified_cpdag = sed(learned_dag, data, counts, arities, varnames, score_function = 'bic')
                         # generate and save modified graph
                         modified_folder = 'modified graph/' + alg + '/' + dataset + '/' + noise
                         Path(modified_folder).mkdir(parents=True, exist_ok=True)

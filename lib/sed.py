@@ -4,7 +4,7 @@ from lib.accessory import random_orient, cpdag, skeleton
 import random
 from time import time
 
-def red(dag, data, counts, arities, varnames, score_function='bic'):
+def sed(dag, data, counts, arities, varnames, score_function='bic'):
     '''
 
     :param dag: the original learned graph
