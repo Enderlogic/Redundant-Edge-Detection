@@ -1,5 +1,5 @@
 # Introduction
-This is an implementation of the Redundant Edge Detection (RED) algorithm which aims to eliminate the redundant edges learned by structure learning algorithms in the presence of measurement error.
+This is an implementation of the Spurious Edge Detection (SED) algorithm which aims to eliminate the spurious edges learned by structure learning algorithms in the presence of measurement error.
 
 There are two embedded structure learning algorithms (HC, PC-Stable) in this code. If you want to test other algorithms, please save the learned graph in the folder "learned graph" with format as the files in it.
 
@@ -22,5 +22,5 @@ The sturcture of a BN is stored in an object of dictionary. The key of the dicti
         - score.py: some score computing functions used in other scripts
         - hc.py: implementation of the hill-climbing algorithm
         - pc_stable.py: implementation of the PC-Stable algorithm
-        - red.py: implementation of the RED algorithm
-- RED_demo.py: a demo sript
+        - sed.py: implementation of the SED algorithm
+- SED_demo.py: a demo sript
